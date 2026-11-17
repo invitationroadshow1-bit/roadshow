@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#062B21" />
+  <title>Exclusive Real Estate Roadshow | Golden Palm Real Estate</title>
+  <meta name="description" content="An invitation to discover distinguished property opportunities and exceptional investment prospects." />
+  <link rel="preload" href="src/fonts/FiraSans-Medium.ttf" as="font" type="font/ttf" crossorigin />
+  <style>
+    @font-face {
+      font-family: "Fira Sans Medium";
+      src: url("src/fonts/FiraSans-Medium.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root {
+      --emerald: #062b21;
+      --forest: #0a211b;
+      --gold: #c6a36b;
+      --gold-soft: #e0cfaa;
+      --ivory: #f3efe5;
+      --olive: #78836d;
+      --header: 78px;
+      --sans: "Fira Sans Medium", "Segoe UI", sans-serif;
+      --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--emerald); }
+    body {
+      margin: 0;
+      background: var(--emerald);
+      color: var(--ivory);
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+    img { max-width: 100%; }
+    a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    :focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+    h1, h2 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.03em; }
+    .skip {
+      position: absolute; left: 1rem; top: -4rem; z-index: 90;
+      background: var(--gold); color: var(--emerald); padding: 0.7rem 1rem; text-decoration: none;
+    }
+    .skip:focus { top: 1rem; }
+    .logo { width: auto; max-width: none; object-fit: contain; display: block; }
+    .logo-pair { display: flex; align-items: center; justify-content: center; gap: clamp(0.85rem, 2vw, 1.35rem); }
+    .rule-y { width: 1px; height: 36px; background: rgba(224, 207, 170, 0.55); flex: none; }
+    .eyebrow {
+      margin: 0; color: var(--gold); font-size: 0.68rem; letter-spacing: 0.38em; text-transform: uppercase;
+    }
+    .gold-rule { width: 0; height: 1px; margin: 1.15rem auto 0; background: var(--gold); }
+    .gold-rule.is-still { width: 4.5rem; margin-top: 1.4rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; margin-top: 1.8rem; padding: 0.85rem 1.45rem;
+      border: 1px solid rgba(198, 163, 107, 0.7); color: var(--gold-soft);
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none;
+    }
+    .btn:hover { background: var(--gold); border-color: var(--gold); color: var(--emerald); }
+    .invitation {
+      height: 100svh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden;
+    }
+    .invitation main { flex: 1; min-height: 0; overflow-y: auto; scroll-behavior: smooth; }
+    .header {
+      position: relative; z-index: 40; flex: none; display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+      height: calc(var(--header) + env(safe-area-inset-top));
+      padding: env(safe-area-inset-top) clamp(1rem, 3vw, 2.2rem) 0;
+      background: #062b21; border-bottom: 1px solid rgba(198, 163, 107, 0.35);
+    }
+    .header-royal { justify-self: start; }
+    .header-gp { justify-self: end; }
+    .header a { display: flex; align-items: center; text-decoration: none; }
+    .header .royal { height: 34px; }
+    .header .gp { height: 38px; }
+    .invite, .evening, .destination { position: relative; }
+    .invite::before, .evening::before, .destination::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.16;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.55'/></svg>");
+    }
+    .invite {
+      min-height: 100%; display: grid; place-items: center; padding: 1.75rem 1.25rem 2.25rem; text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 36%, rgba(198, 163, 107, 0.16), transparent 36%),
+        radial-gradient(ellipse at 50% 120%, rgba(0, 0, 0, 0.35), transparent 46%),
+        var(--emerald);
+      animation: veil 1.2s var(--ease) both;
+    }
+    .invite-frame {
+      position: absolute; inset: 0.85rem; border: 1px solid rgba(198, 163, 107, 0.28); pointer-events: none;
+    }
+    .invite::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at center, transparent 46%, rgba(0, 0, 0, 0.34) 100%);
+    }
+    .invite-inner { position: relative; z-index: 1; width: min(920px, 100%); }
+    .invite .royal { height: 48px; }
+    .invite .gp { height: 52px; }
+    .invite .eyebrow { margin-top: 1.7rem; }
+    .invite h1 { margin: 0.85rem 0 0; color: var(--ivory); font-size: clamp(4.4rem, 11vw, 8.8rem); line-height: 0.98; }
+    .invite h1 span {
+      display: block; width: fit-content; max-width: 100%; margin-inline: auto;
+      background-image: linear-gradient(100deg, #c6a36b 0%, #e4d0a4 36%, #fff8ec 48%, #fffdf8 50%, #fff8ec 52%, #e4d0a4 64%, #c6a36b 100%);
+      background-size: 250% 100%;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: title-shine 4.8s ease-in-out infinite;
+    }
+    .invite h1 .title-mid {
+      margin-block: 0.42em 0.28em; font-size: 0.26em; letter-spacing: 0.46em; text-indent: 0.46em;
+      text-transform: uppercase; line-height: 1.35; white-space: nowrap;
+    }
+    @keyframes title-shine {
+      0%, 16% { background-position: 120% 0; }
+      58%, 100% { background-position: -20% 0; }
+    }
+    .invite-copy {
+      max-width: 34rem; margin: 1.35rem auto 0; color: rgba(243, 239, 229, 0.78); font-size: 1.05rem;
+    }
+    .scroll-hint {
+      position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+      width: fit-content; margin: 2.2rem auto 0; color: var(--gold); font-size: 0.78rem;
+      letter-spacing: 0.28em; text-indent: 0.28em; text-transform: uppercase; text-decoration: none;
+    }
+    .scroll-hint svg {
+      width: 28px; height: 28px; fill: none; stroke: var(--gold); stroke-width: 1.5;
+      stroke-linecap: round; stroke-linejoin: round; animation: scroll-bob 1.5s ease-in-out infinite;
+    }
+    @keyframes scroll-bob {
+      0%, 100% { transform: translateY(0); opacity: 0.45; }
+      50% { transform: translateY(7px); opacity: 1; }
+    }
+    .evening {
+      background: radial-gradient(ellipse at 50% 0%, rgba(198, 163, 107, 0.08), transparent 40%), var(--forest);
+      text-align: center; padding: clamp(5.5rem, 12vw, 9rem) 1.25rem;
+    }
+    .evening h2, .destination h2 {
+      margin: 0.7rem 0 0; color: var(--ivory); font-size: clamp(3.4rem, 8vw, 6.4rem); line-height: 1; text-transform: uppercase;
+    }
+    .evening-date { margin: 0.7rem 0 0; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: 0.04em; }
+    .evening-time {
+      margin: 0.85rem 0 0; color: var(--gold-soft); letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.82rem;
+    }
+    .evening-copy { max-width: 28rem; margin: 1.2rem auto 0; color: rgba(243, 239, 229, 0.74); }
+    .destination {
+      background: radial-gradient(ellipse at 50% 18%, rgba(198, 163, 107, 0.1), transparent 38%), var(--emerald);
+      text-align: center; padding: clamp(5.5rem, 12vw, 9rem) 1.25rem 4.5rem;
+    }
+    .pin { width: 22px; height: 22px; margin: 1.15rem auto 0; fill: none; stroke: var(--gold); stroke-width: 1.2; }
+    .city { margin: 0.75rem 0 0; color: var(--gold-soft); letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.82rem; }
+    .closing { margin-top: clamp(4.5rem, 10vw, 7.5rem); }
+    .closing .royal { height: 32px; }
+    .closing .gp { height: 36px; }
+    .closing-line { margin: 1.8rem 0 0; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.15; }
+    .closing-host, .closing-partner { margin: 1.1rem 0 0; letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.72rem; }
+    .closing-with { margin: 0.55rem 0 0; color: var(--olive); letter-spacing: 0.28em; text-transform: uppercase; font-size: 0.64rem; }
+    .rise { animation: rise 1s var(--ease) both; }
+    .d1 { animation-delay: 0.35s; }
+    .d2 { animation-delay: 1.05s; }
+    .d3 { animation-delay: 1.25s; animation-name: grow; }
+    .d4 { animation-delay: 1.55s; }
+    .d5 { animation-delay: 1.95s; }
+    @keyframes veil { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes grow { from { width: 0; opacity: 0; } to { width: 4.5rem; opacity: 1; } }
+    .reveal { position: relative; z-index: 1; }
+    .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+    .js .reveal.is-in { opacity: 1; transform: none; }
+    @media (max-width: 720px) {
+      :root { --header: 68px; }
+      .header .royal { height: 26px; }
+      .header .gp { height: 30px; }
+      .invite .royal { height: 36px; }
+      .invite .gp { height: 40px; }
+      .invite h1 { font-size: clamp(3.2rem, 15vw, 4.8rem); }
+      .evening h2, .destination h2 { font-size: clamp(2.5rem, 12vw, 3.6rem); }
+      .invite-frame { inset: 0.55rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .invite, .rise, .gold-rule, .reveal, .title-mid, .scroll-hint svg {
+        animation: none !important; opacity: 1 !important; transform: none !important; transition: none !important;
+      }
+      .gold-rule { width: 4.5rem; }
+      .invite h1 span { animation: none; background: none; color: #d4b583; }
+    }
+  </style>
+</head>
+<body>
+  <div class="invitation">
+    <a class="skip" href="#invitation">Skip to invitation</a>
+    <header class="header">
+      <a class="header-royal" href="#invitation" aria-label="Royal Development Holding">
+        <img class="logo royal" src="public/logos/royal.png" alt="" width="420" height="131" />
+      </a>
+      <a class="header-gp" href="#invitation" aria-label="Golden Palm Real Estate">
+        <img class="logo gp" src="public/logos/golden-palm.png" alt="" width="507" height="175" />
+      </a>
+    </header>
+    <main>
+      <section class="invite" id="invitation" aria-label="The exclusive invitation">
+        <div class="invite-frame" aria-hidden="true"></div>
+        <div class="invite-inner">
+          <div class="logo-pair rise d1">
+            <img class="logo royal" src="public/logos/royal.png" alt="Royal Development Holding" width="420" height="131" />
+            <span class="rule-y"></span>
+            <img class="logo gp" src="public/logos/golden-palm.png" alt="Golden Palm Real Estate" width="507" height="175" />
+          </div>
+          <p class="eyebrow rise d2">A private invitation</p>
+          <div class="gold-rule rise d3"></div>
+          <h1 class="rise d4">
+            <span>Exclusive</span>
+            <span class="title-mid">Real Estate</span>
+            <span>Roadshow</span>
+          </h1>
+          <p class="invite-copy rise d5">An invitation to discover distinguished property opportunities and exceptional investment prospects.</p>
+          <a class="scroll-hint" href="#evening">
+            <span>Scroll down</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </a>
+        </div>
+      </section>
+      <section class="evening" id="evening">
+        <div class="reveal">
+          <p class="eyebrow">The evening</p>
+          <h2>Saturday</h2>
+          <p class="evening-date">21 Nov 2026</p>
+          <p class="evening-time">10:00 AM – 6:00 PM GST</p>
+          <div class="gold-rule is-still"></div>
+          <p class="evening-copy">An exclusive evening dedicated to exceptional property and investment opportunities.</p>
+        </div>
+      </section>
+      <section class="destination" id="destination">
+        <div class="reveal">
+          <p class="eyebrow">The destination</p>
+          <svg class="pin" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21.5s6.2-5.7 6.2-10.1a6.2 6.2 0 1 0-12.4 0c0 4.4 6.2 10.1 6.2 10.1z"></path>
+            <circle cx="12" cy="11.2" r="1.7"></circle>
+          </svg>
+          <h2>Al Reem Island</h2>
+          <p class="city">Abu Dhabi, UAE</p>
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Al%20Reem%20Island%2C%20Abu%20Dhabi%2C%20UAE" target="_blank" rel="noopener noreferrer">Get directions</a>
+        </div>
+        <div class="reveal">
+          <div class="closing">
+            <div class="logo-pair">
+              <img class="logo royal" src="public/logos/royal.png" alt="Royal Development Holding" width="420" height="131" />
+              <span class="rule-y"></span>
+              <img class="logo gp" src="public/logos/golden-palm.png" alt="Golden Palm Real Estate" width="507" height="175" />
+            </div>
+            <p class="closing-line">We look forward to welcoming you.</p>
+            <p class="closing-host">Golden Palm Real Estate</p>
+            <p class="closing-with">In collaboration with</p>
+            <p class="closing-partner">Royal Development Holding</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    document.documentElement.classList.add("js");
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.querySelectorAll(".reveal").forEach(function (node) {
+      if (reduce) {
+        node.classList.add("is-in");
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        if (entries[0] && entries[0].isIntersecting) {
+          node.classList.add("is-in");
+          observer.disconnect();
+        }
+      }, { threshold: 0.2 });
+      observer.observe(node);
+    });
+    var hint = document.querySelector(".scroll-hint");
+    if (hint) {
+      hint.addEventListener("click", function (event) {
+        event.preventDefault();
+        var evening = document.getElementById("evening");
+        if (evening) evening.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  </script>
+</body>
+</html>

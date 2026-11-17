@@ -11,11 +11,9 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-The guest desk is at [http://localhost:3000/admin](http://localhost:3000/admin).
+The guest desk is at [http://localhost:3000/admin](http://localhost:3000/admin). The desk password stays in `.env.local` (`ADMIN_PASSWORD` and `SESSION_SECRET`) and is not published here.
 
-Initial password: `PalmRoadshow#2026`
-
-Change it in `.env.local` (`ADMIN_PASSWORD` and `SESSION_SECRET`), then restart the server.
+GitHub Pages serves `index.html` at the site root. That file is the public invitation. This readme is for running the project on a computer.
 
 ## What the desk controls
 
