@@ -157,6 +157,10 @@
     .evening h2, .destination h2 {
       margin: 0.7rem 0 0; color: var(--ivory); font-size: clamp(3.4rem, 8vw, 6.4rem); line-height: 1; text-transform: uppercase;
     }
+    .destination h2 {
+      max-width: 12em; margin-inline: auto; font-size: clamp(1.55rem, 5.4vw, 2.85rem);
+      line-height: 1.08; letter-spacing: 0.045em; text-wrap: balance;
+    }
     .evening-date { margin: 0.7rem 0 0; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: 0.04em; }
     .evening-time {
       margin: 0.85rem 0 0; color: var(--gold-soft); letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.82rem;
@@ -193,7 +197,8 @@
       .invite .royal { height: 36px; }
       .invite .gp { height: 40px; }
       .invite h1 { font-size: clamp(3.2rem, 15vw, 4.8rem); }
-      .evening h2, .destination h2 { font-size: clamp(2.5rem, 12vw, 3.6rem); }
+      .evening h2 { font-size: clamp(2.5rem, 12vw, 3.6rem); }
+      .destination h2 { font-size: clamp(1.45rem, 6.6vw, 1.85rem); }
       .invite-frame { inset: 0.55rem; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -256,7 +261,7 @@
             <path d="M12 21.5s6.2-5.7 6.2-10.1a6.2 6.2 0 1 0-12.4 0c0 4.4 6.2 10.1 6.2 10.1z"></path>
             <circle cx="12" cy="11.2" r="1.7"></circle>
           </svg>
-          <h2>EliteSun Oasis</h2>
+          <h2>Royal Development Holding Sales Centre</h2>
           <p class="city">Al Reem Island, Abu Dhabi</p>
           <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=24.4935527,54.4037338" target="_blank" rel="noopener noreferrer">Get directions</a>
         </div>
